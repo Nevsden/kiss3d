@@ -44,7 +44,7 @@ impl MaterialManager {
 
         MaterialManager {
             default_material: om,
-            materials: materials,
+            materials,
         }
     }
 

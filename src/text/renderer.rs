@@ -111,7 +111,7 @@ impl TextRenderer {
             color: shader.get_uniform("color").expect("Could not find color"),
             pos: shader.get_attrib("pos").expect("Could not find pos"),
             uvs: shader.get_attrib("uvs").expect("Could not find uvs"),
-            shader: shader,
+            shader,
             contexts: Vec::new(),
             coords: GPUVec::new(Vec::new(), BufferType::Array, AllocationType::StreamDraw),
         }
@@ -267,11 +267,11 @@ impl TextRenderer {
 }
 
 /// Vertex shader used by the material to display line.
-pub static TEXT_VERTEX_SRC: &'static str = A_VERY_LONG_STRING;
+pub static TEXT_VERTEX_SRC: &str = A_VERY_LONG_STRING;
 /// Fragment shader used by the material to display line.
-pub static TEXT_FRAGMENT_SRC: &'static str = ANOTHER_VERY_LONG_STRING;
+pub static TEXT_FRAGMENT_SRC: &str = ANOTHER_VERY_LONG_STRING;
 
-const A_VERY_LONG_STRING: &'static str = "
+const A_VERY_LONG_STRING: &str = "
 #version 100
 
 uniform vec2 invsz;
@@ -290,7 +290,7 @@ void main() {
 }
 ";
 
-const ANOTHER_VERY_LONG_STRING: &'static str = "
+const ANOTHER_VERY_LONG_STRING: &str = "
 #version 100
 
 #ifdef GL_FRAGMENT_PRECISION_HIGH

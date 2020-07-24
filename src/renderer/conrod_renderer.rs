@@ -577,7 +577,7 @@ impl ConrodRenderer {
     }
 }
 
-static TRIANGLES_VERTEX_SRC: &'static str = "#version 100
+static TRIANGLES_VERTEX_SRC: &str = "#version 100
 attribute vec2 position;
 attribute vec4 color;
 
@@ -590,7 +590,7 @@ void main(){
     v_color = color;
 }";
 
-static TRIANGLES_FRAGMENT_SRC: &'static str = "#version 100
+static TRIANGLES_FRAGMENT_SRC: &str = "#version 100
 #ifdef GL_FRAGMENT_PRECISION_HIGH
    precision highp float;
 #else
@@ -603,7 +603,7 @@ void main() {
   gl_FragColor = v_color;
 }";
 
-const TEXT_VERTEX_SRC: &'static str = "
+const TEXT_VERTEX_SRC: &str = "
 #version 100
 
 uniform vec2 window_size;
@@ -622,7 +622,7 @@ void main() {
 }
 ";
 
-const TEXT_FRAGMENT_SRC: &'static str = "
+const TEXT_FRAGMENT_SRC: &str = "
 #version 100
 
 #ifdef GL_FRAGMENT_PRECISION_HIGH
@@ -641,7 +641,7 @@ void main() {
 }
 ";
 
-const IMAGE_VERTEX_SRC: &'static str = "
+const IMAGE_VERTEX_SRC: &str = "
 #version 100
 
 uniform vec2 window_size;
@@ -660,7 +660,7 @@ void main() {
 }
 ";
 
-const IMAGE_FRAGMENT_SRC: &'static str = "
+const IMAGE_FRAGMENT_SRC: &str = "
 #version 100
 
 #ifdef GL_FRAGMENT_PRECISION_HIGH

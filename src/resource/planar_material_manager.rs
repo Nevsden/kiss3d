@@ -34,7 +34,7 @@ impl PlanarMaterialManager {
 
         PlanarMaterialManager {
             default_material: om,
-            materials: materials,
+            materials,
         }
     }
 

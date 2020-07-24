@@ -550,14 +550,14 @@ impl PlanarSceneNode {
         object: Option<PlanarObject>,
     ) -> PlanarSceneNode {
         let data = PlanarSceneNodeData {
-            local_scale: local_scale,
-            local_transform: local_transform,
+            local_scale,
+            local_transform,
             world_transform: local_transform,
             world_scale: local_scale,
             visible: true,
             up_to_date: false,
             children: Vec::new(),
-            object: object,
+            object,
             parent: None,
         };
 

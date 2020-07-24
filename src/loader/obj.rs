@@ -350,14 +350,14 @@ fn parse_f<'a>(
 }
 
 fn parse_vt(l: usize, mut ws: Words) -> UV {
-    let _0 = "0.0";
+    let zero = "0.0";
     let sx = ws
         .next()
         .unwrap_or_else(|| error(l, "at least 2 components were expected, found 0."));
     let sy = ws
         .next()
         .unwrap_or_else(|| error(l, "at least 2 components were expected, found 1."));
-    // let sz  = ws.next().unwrap_or(_0);
+    // let sz  = ws.next().unwrap_or(zero);
 
     let x: Result<f32, _> = FromStr::from_str(sx);
     let y: Result<f32, _> = FromStr::from_str(sy);
