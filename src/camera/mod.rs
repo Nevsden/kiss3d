@@ -1,6 +1,6 @@
 //! Camera trait with some common implementations.
 
-pub use self::arc_ball::ArcBall;
+pub use self::arc_ball::{ArcBall, CoordSystem};
 pub use self::camera::Camera;
 pub use self::first_person::FirstPerson;
 pub use self::first_person_stereo::FirstPersonStereo;

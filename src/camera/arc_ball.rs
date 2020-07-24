@@ -58,7 +58,14 @@ pub struct ArcBall {
 impl ArcBall {
     /// Create a new arc-ball camera.
     pub fn new(eye: Point3<f32>, at: Point3<f32>) -> ArcBall {
-        ArcBall::new_with_frustrum(f32::consts::PI / 4.0, 0.1, 1024.0, eye, at)
+        ArcBall::new_with_frustrum(
+            f32::consts::PI / 4.0,
+            0.1,
+            1024.0,
+            eye,
+            at,
+            CoordSystem::RightHandYUp,
+        )
     }
 
     /// Creates a new arc ball camera with default sensitivity values.
@@ -68,6 +75,7 @@ impl ArcBall {
         zfar: f32,
         eye: Point3<f32>,
         at: Point3<f32>,
+        coord_system: CoordSystem,
     ) -> ArcBall {
         let mut res = ArcBall {
             at: Point3::new(0.0, 0.0, 0.0),
@@ -92,7 +100,7 @@ impl ArcBall {
             proj_view: na::zero(),
             inverse_proj_view: na::zero(),
             last_cursor_pos: na::zero(),
-            coord_system: CoordSystem::RightHandYUp,
+            coord_system: coord_system,
         };
 
         res.look_at(eye, at);
@@ -445,7 +453,7 @@ impl Camera for ArcBall {
 }
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
-enum CoordSystem {
+pub enum CoordSystem {
     RightHandYUp,
     RightHandZUp,
 }
